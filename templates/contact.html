@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+   <!-- Header Section -->
+   <header>
+    <nav>
+        <a href="{{ url_for('profile') }}">Profile</a>
+        
+        <!-- Dropdown menu for Works -->
+        <div class="works-dropdown">
+            <a href="#" class="works-link" id="worksLink">Works</a>
+            <div class="dropdown-content" id="dropdownContent">
+              <a href="{{ url_for('linkedlist') }}">Linklist</a>
+              <a href="{{ url_for('linkedlist') }}">Linklist</a>
+              <a href="{{ url_for('stack') }}">Stack</a>
+              <a href="{{ url_for('queue_view') }}">Queue</a>
+              <a href="{{ url_for('graph_view') }}">Graph</a>
+              <a href="{{ url_for('tree_view') }}">Binary</a>
+              <a href="{{ url_for('code') }}">Codes</a>
+              <a href="{{ url_for('sort') }}">Sorting</a>
+              <a href="{{ url_for('works') }}">Others</a>
+            </div>
+        </div>
+
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+</header>
+
+
+    <div class="container">
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>  
+          <p class="text">
+            For more information about our team, you can reach us through the following contacts, or send a message.
+          </p>
+
+          <div class="info">
+            <div class="information">
+                <p>
+                    <img src="{{ url_for('static', filename='images/locat.gif') }}" alt="Location Icon">
+                    A. Mabini Campus, Sta. Mesa, Manila, Philippines 1016
+                </p>
+            </div>
+            <div class="information">
+                <p>
+                    <img src="{{ url_for('static', filename='images/mail.gif') }}" alt="Email Icon">
+                    inquire@pup.edu.ph
+                </p>
+            </div>
+            <div class="information">
+                <p>
+                    <img src="{{ url_for('static', filename='images/tele.gif') }}" alt="Telephone Icon">
+                    (632) 5335-1787 or 5335-1777 local 251
+                </p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/ThePUPOfficial" target="_blank">
+                <img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook">
+            </a>
+            <a href="https://x.com/thepupofficial?s=21" target="_blank">
+              <img src="{{ url_for('static', filename='images/x.png') }}" alt="Twitter">
+          </a>
+              <a href="https://www.instagram.com/thepupofficial/" target="_blank">
+                <img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram">
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form action="/contact" method="POST" autocomplete="off">
+            <h3 class="title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" name="name" class="input" />
+              <label for="">Name</label>
+              <span>Name</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="email" class="input" />
+              <label for="">Email</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="phone" class="input" />
+              <label for="">Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="message" class="input"></textarea>
+              <label for="">Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="homepage-button">
+      <a href="{{ url_for('home') }}" class="back-home-btn">GO BACK TO HOMEPAGE</a>
+  </div>
+
+    <script src="{{ url_for('static', filename='contact.js') }}"></script>
+  </body>
+</html>

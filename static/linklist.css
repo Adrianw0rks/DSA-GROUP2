@@ -1,0 +1,424 @@
+
+/* Header Styling with Rounded Glass Effect */
+header {
+    width: 740px; /* Full width of the page */
+    max-width: 70%; /* Remove max-width restriction */
+    height: 50px;
+    display: flex;
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    position: fixed; /* Fix the header to the top */
+    top: 0; /* Align to the top */
+    left: 50; /* Align to the left */
+    z-index: 100; /* Ensure it's above other elements */
+    backdrop-filter: blur(10px); /* Glass effect */
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent dark background */
+    padding: 0; /* Removed the default padding */
+    border-radius: 30px; /* No border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow to enhance glass effect */
+}
+
+/* Adjust the body to account for the fixed header */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/static/images/work.png') no-repeat center center/cover; /* Path to background image */
+    background-size: cover;
+    padding-top: 350px; /* Add space for the fixed header */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+/* Header Links Styling */
+header a {
+    color: #eee;
+    margin-right: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Hover Effect for Links */
+header a:hover {
+    background-color: #f1683a;
+    color: #fff;
+}
+
+/* Active Link Style */
+header a.active {
+    border-bottom: 2px solid #f1683a;
+}
+
+/* General container styling for all sections */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    margin-top: 250px;   
+}
+
+/* Horizontal layout for sections */
+.horizontal-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Section styling for all containers */
+.linked-list, .form-container, .operation-buttons {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 1200px;
+    margin: 10px;
+}
+
+/* Title and text formatting */
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+}
+/* Linked List content */
+.list-content {
+    font-size: 16px;
+    color: #333;
+    word-wrap: break-word;
+}
+
+/* Input and button styling */
+input[type="text"], input[type="submit"] {
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Button hover effect */
+input[type="submit"]:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Result text after removing data */
+.result {
+    background-color: #d1e7dd; /* Light green background */
+    color: #0f5132; /* Dark green text */
+    padding: 10px;
+    border: 1px solid #badbcc; /* Slightly darker green border */
+    margin-top: 10px; /* Adds space above the message */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center-aligns the text */
+    font-weight: bold;
+}
+/* Styling for the homepage button */
+.homepage-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Button styling */
+.back-home-btn {
+    padding: 10px 20px;
+    font-size: 16px;    
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.back-home-btn:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+/* Insert operation buttons container */
+.insert-operation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Increase the gap between buttons */
+}
+
+/* Insert buttons styling */
+.insert-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.insert-btn:hover {
+    background-color: #45a049;
+}
+
+/* Remove buttons styling */
+.remove-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #f44336;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #e53935;
+}
+
+/* Dropdown container styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Dropdown items styling */
+.dropdown-content a {
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.works-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.works-link {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    width: auto;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+.form-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 540px;
+    margin: 10px; /* Adjust spacing between sections */
+}
+.operation-buttons {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 540px;
+    margin-left: auto; /* This pushes the operation buttons to the right */
+}
+/* Styling for Insert Data at Specific Index */
+.insert-data-container {
+    flex: 0 0 300px; /* Set fixed width */
+    max-width: 300px;
+    margin-left: auto; /* Align to the right */
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.5); /* Slightly different background color */
+    max-width: 540px;
+}
+
+.insert-data-container input[type="number"] {
+    width: 80%; /* Adjust input width */
+}
+/* Styling for Remove Data at Specific Index */
+.remove-data-container {
+    flex: 0 0 300px; /* Set fixed width */
+    max-width: 300px;
+    margin-left: auto; /* Align to the right */
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.5); /* Slightly different background color */
+    max-width: 540px;
+}
+/* Styling for Remove Data at Specific Index */
+.search-data-container {
+    position: relative;
+    top: -115px; /* Moves the container upwards */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 540px;
+    margin: 10px;
+}
+.remove-data-container input[type="number"] {
+    width: 80%; /* Adjust input width */
+}
+
+.insert-data-container, .remove-data-container, .operation-buttons {
+    background: rgba(255, 255, 255, 0.5); /* Optional: Slightly different background color for emphasis */
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px; /* Adds space below each container */
+}
+/* Adjusting the "Insert Data" container */
+.insert-data-container {
+    margin-top: -660px; /* Moves up */
+}
+
+/* Adjusting the "Remove Data" container */
+.remove-data-container {
+    margin-top: -10px; /* Moves up */
+}
+
+/* Adjusting the "Operation Buttons" container */
+.operation-buttons-container {
+    margin-top: -10px; /* Moves up */
+}
+
+/* Styling for the "Insert Data at Beginning" container */
+.insert-beginning {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 540px;
+    margin: 10px; /* Adjust spacing between sections */
+}
+
+/* Styling for the "Insert Data at End" container */
+.insert-end {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 540px;
+    margin: 10px; /* Adjust spacing between sections */
+}
+
+/* Styling for Linked List Explanation Section */
+.linked-list-explanation {
+    background: rgba(255, 255, 255, 0.3); /* Transparent background */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-top: 40px; /* Adds space from previous sections */
+    max-height: 200px; /* Maximum height for scrollable content */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-bottom: 20px; /* Adds space below */
+}
+
+/* Title styling */
+.linked-list-explanation h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    
+}
+
+/* Paragraph styling */
+.linked-list-explanation p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+.error-message {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+    color: #842029;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}

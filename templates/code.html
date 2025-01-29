@@ -1,0 +1,134 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='code.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            
+            <!-- Dropdown menu for Works -->
+            <div class="works-dropdown">
+                <a href="#" class="works-link" id="worksLink">Works</a>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="{{ url_for('linkedlist') }}">Linklist</a>
+                    <a href="{{ url_for('stack') }}">Stack</a>
+                    <a href="{{ url_for('queue_view') }}">Queue</a>
+                    <a href="{{ url_for('graph_view') }}">Graph</a>
+                    <a href="{{ url_for('tree_view') }}">Binary</a>
+                    <a href="{{ url_for('code') }}">Codes</a>
+                    <a href="{{ url_for('sort') }}">Sorting</a>
+                    <a href="{{ url_for('works') }}">Others</a>
+                </div>
+            </div>
+    
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Carousel Section -->
+    <div class="carousel">
+        <!-- List of carousel items -->
+        <div class="list">
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/2.png') }}" alt="CSS">
+                <div class="content">
+                    <div class="author">Meowgicians</div>
+                    <div class="title">Cascading Style Sheets</div>
+                    <div class="topic">CSS</div>
+                    <div class="des">
+                        CSS is a stylesheet language used to control the appearance and layout of HTML elements on a web page, including colors, fonts, and spacing. It separates content (HTML) from presentation, allowing for consistent and visually appealing designs.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/3.png') }}" alt="JavaScript">
+                <div class="content">
+                    <div class="author">Meowgicians</div>
+                    <div class="title">JavaScript</div>
+                    <div class="topic">JS</div>
+                    <div class="des">
+                        JavaScript is a programming language that enables interactivity on websites, such as animations, form validation, and dynamic content updates. It works alongside HTML and CSS to create engaging and functional user experiences.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/4.png') }}" alt="HTML">
+                <div class="content">
+                    <div class="author">Meowgicians</div>
+                    <div class="title">HyperText Markup Language</div>
+                    <div class="topic">HTML</div>
+                    <div class="des">
+                        HTML is the standard language for creating the structure of web pages, using tags to define elements like headings, paragraphs, and images. It serves as the backbone of websites, determining what content appears and how it is organized.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/1.png') }}" alt="Python">
+                <div class="content">
+                    <div class="author">Meowgicians</div>
+                    <div class="title">Python</div>
+                    <div class="topic">PY</div>
+                    <div class="des">
+                        Python is a versatile and beginner-friendly programming language used for web development, data analysis, machine learning, and more. Its simplicity and readability make it popular for both small projects and large-scale applications.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thumbnails for carousel navigation -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/ihh.png') }}" alt="CSS Thumbnail">
+                <div class="content">
+                    <div class="title">CSS</div>
+                    <div class="description">Cascading Style Sheets</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/bleh.png') }}" alt="JavaScript Thumbnail">
+                <div class="content">
+                    <div class="title">JS</div>
+                    <div class="description">JavaScript</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/sus.png') }}" alt="HTML Thumbnail">
+                <div class="content">
+                    <div class="title">HTML</div>
+                    <div class="description">HyperText Markup Language</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/nyaw.png') }}" alt="Python Thumbnail">
+                <div class="content">
+                    <div class="title">PY</div>
+                    <div class="description">Python</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next and Previous buttons for carousel -->
+        <div class="arrows">
+            <button id="prev" aria-label="Previous slide">&lt;</button>
+            <button id="next" aria-label="Next slide">&gt;</button>
+        </div>
+
+        <!-- Time running indicator (optional) -->
+        <div class="time"></div>
+    </div>
+
+    <div class="homepage-button">
+        <a href="{{ url_for('home') }}" class="back-home-btn">GO BACK TO HOMEPAGE</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='code.js') }}"></script>
+
+</body>
+</html>

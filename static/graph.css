@@ -1,0 +1,255 @@
+/* General styles for the body and overall layout */
+body {
+    font-family: Arial, sans-serif;
+    background: url('/static/images/train\ route.png') no-repeat center center/cover; /* Path to background image */
+    background-size: cover;
+    margin: 0;
+    padding: 60px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Style for the form */
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for displaying results */
+.result-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+.result-box h3 {
+    margin-top: 0;
+}
+
+.result-box p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Style for form error messages */
+.error-message {
+    color: #ff4d4d;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Styling for the select dropdowns */
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+select option:disabled {
+    color: #ccc;
+}
+
+/* Style for View Map button */
+.view-map-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.view-map-btn:hover {
+    background-color: #218838;
+}
+
+/* Style for the map image */
+.map-container {
+    margin-top: 30px;
+    text-align: center;
+    display: none;
+}
+
+.map-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Header Styling with Rounded Glass Effect */
+header {
+    width: 740px;
+    max-width: 70%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* Header Links Styling */
+  header a {
+    color: #eee;
+    margin-right: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  /* Hover Effect for Links */
+  header a:hover {
+    background-color: #f1683a;
+    color: #fff;
+  }
+  
+  /* Active Link Style */
+  header a.active {
+    border-bottom: 2px solid #f1683a;
+  }
+  
+  /* Dropdown container styling */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Dropdown items styling */
+  .dropdown-content a {
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .works-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .works-link {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    width: auto;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .works-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Styling for the homepage button */
+.homepage-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Button styling */
+.back-home-btn {
+    padding: 10px 20px;
+    font-size: 16px;    
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.back-home-btn:hover {
+    background-color: #555;
+    cursor: pointer;
+}

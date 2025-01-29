@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infix to Postfix Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stack.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            
+            <!-- Dropdown menu for Works -->
+            <div class="works-dropdown">
+                <a href="#" class="works-link" id="worksLink">Works</a>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="{{ url_for('linkedlist') }}">Linklist</a>
+                    <a href="{{ url_for('stack') }}">Stack</a>
+                    <a href="{{ url_for('queue_view') }}">Queue</a>
+                    <a href="{{ url_for('graph_view') }}">Graph</a>
+                    <a href="{{ url_for('tree_view') }}">Binary</a>
+                    <a href="{{ url_for('code') }}">Codes</a>
+                    <a href="{{ url_for('sort') }}">Sorting</a>
+                    <a href="{{ url_for('works') }}">Others</a>
+                </div>
+            </div>
+    
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+
+<!-- Add a content wrapper -->
+<div class="content-wrapper">
+    <div class="container">
+        <h1>Infix to Postfix Converter</h1>
+
+        <div class="info">
+            <h2>What are Infix and Postfix Notations?</h2>
+            <p><strong>Infix Notation:</strong> Infix notation is the standard way we write mathematical expressions, where operators are written between operands (e.g., <code>A + B</code>, <code>(A + B) * C</code>). It requires parentheses to specify operator precedence explicitly.</p>
+            <p><strong>Postfix Notation:</strong> Also known as Reverse Polish Notation (RPN), in postfix notation, operators follow their operands (e.g., <code>AB+</code>, <code>AB+C*</code>). It eliminates the need for parentheses as operator precedence is implicit.</p>
+        </div>
+
+        <div class="note">
+            <h3>Note:</h3>
+            <ul>
+                <li>Use <strong>spaces</strong> between each operand and operator.</li>
+                <li>Example input: <code>( A + B ) * C</code></li>
+                <li>Supported operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>^</code> (exponentiation).</li>
+                <li>Ensure parentheses are balanced.</li>
+            </ul>
+        </div>
+
+        <form method="POST">
+            <label for="infix_expression">Enter Infix Expression:</label>
+            <input type="text" id="infix_expression" name="infix_expression" required>
+            <button type="submit">Convert</button>
+        </form>
+
+        {% if result %}
+        <div class="result-container">
+            <label class="result-label">Postfix Expression:</label>
+            <div class="result">
+                {{ result }}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if steps %}
+        <div>
+            <h2>Infix to Postfix Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Step</th>
+                        <th>Expression</th>
+                        <th>Stack</th>
+                        <th>Postfix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for step in steps %}
+                    <tr>
+                        <td>{{ step.step }}</td>
+                        <td>{{ step.expression }}</td>
+                        <td>{{ step.stack }}</td>
+                        <td>{{ step.postfix }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="error">
+            <strong>Error:</strong> {{ error }}
+        </div>
+        {% endif %}
+        <!-- Homepage Button -->
+        <div class="homepage-button">
+            <a href="{{ url_for('home') }}" class="back-home-btn">Back to Homepage</a>
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='stack.js') }}"></script>
+</body>
+</html>

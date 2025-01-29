@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Magnific Popup CSS CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='touppercase.css') }}">
+
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <nav>
+        <a href="{{ url_for('profile') }}">Profile</a>
+        
+        <!-- Dropdown menu for Works -->
+        <div class="works-dropdown">
+            <a href="#" class="works-link" id="worksLink">Works</a>
+            <div class="dropdown-content" id="dropdownContent">
+                <a href="{{ url_for('linkedlist') }}">Linklist</a>
+                <a href="{{ url_for('stack') }}">Stack</a>
+                <a href="{{ url_for('queue_view') }}">Queue</a>
+                <a href="{{ url_for('graph_view') }}">Graph</a>
+                <a href="{{ url_for('tree_view') }}">Binary</a>
+                <a href="{{ url_for('code') }}">Codes</a>
+                <a href="{{ url_for('sort') }}">Sorting</a>
+                <a href="{{ url_for('works') }}">Others</a>
+            </div>
+        </div>
+
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+</header>
+
+<h1 class="main-title">Work's Gallery</h1>
+<div class="gallery">
+    <ul class="controls">
+        <li class="buttons active" data-filter="all">all</li>
+        <li class="buttons" data-filter="Adrian">Adrian's work</li>
+        <li class="buttons" data-filter="benny">Benny's work</li>
+        <li class="buttons" data-filter="Myk">Myk's work</li>
+        <li class="buttons" data-filter="Lenin">Lenin's work</li>
+        <li class="buttons" data-filter="Andrey">Andrey's work</li>
+        <li class="buttons" data-filter="Berna">Berna's work</li>
+        <li class="buttons" data-filter="Echo">Echo's work</li>
+    </ul>
+
+    <div class="image-container">
+
+        <a href="{{ url_for('static', filename='images/BENNY1.png') }}" class="image benny">
+            <img src="{{ url_for('static', filename='images/BENNY1.png') }}" alt="">
+        </a>
+        
+        <a href="{{ url_for('static', filename='images/BENNY2.png') }}" class="image benny">
+            <img src="{{ url_for('static', filename='images/BENNY2.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/BENNY3.png') }}" class="image benny">
+            <img src="{{ url_for('static', filename='images/BENNY3.png') }}" alt="">
+        </a>
+
+        <a href="{{ url_for('static', filename='images/BENNY4.png') }}" class="image benny">
+            <img src="{{ url_for('static', filename='images/BENNY4.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/BENNY5.png') }}" class="image benny">
+            <img src="{{ url_for('static', filename='images/BENNY5.png') }}" alt="">
+        </a>
+
+        <a href="{{ url_for('static', filename='images/MYK1.png') }}" class="image Myk">
+            <img src="{{ url_for('static', filename='images/MYK1.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/MYK2.png') }}" class="image Myk">
+            <img src="{{ url_for('static', filename='images/MYK2.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/MYK3.png') }}" class="image Myk">
+            <img src="{{ url_for('static', filename='images/MYK3.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/MYK4.png') }}" class="image Myk">
+            <img src="{{ url_for('static', filename='images/MYK4.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/MYK5.png') }}" class="image Myk">
+            <img src="{{ url_for('static', filename='images/MYK5.png') }}" alt="">
+        </a>
+
+        <a href="{{ url_for('static', filename='images/ADRIAN1.png') }}" class="image Adrian">
+            <img src="{{ url_for('static', filename='images/ADRIAN1.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ADRIAN2.png') }}" class="image Adrian">
+            <img src="{{ url_for('static', filename='images/ADRIAN2.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ADRIAN3.png') }}" class="image Adrian">
+            <img src="{{ url_for('static', filename='images/ADRIAN3.png') }}" alt="">
+        </a>
+
+        <a href="{{ url_for('static', filename='images/ADRIAN4.png') }}" class="image Adrian">
+            <img src="{{ url_for('static', filename='images/ADRIAN4.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ADRIAN5.png') }}" class="image Adrian">
+            <img src="{{ url_for('static', filename='images/ADRIAN5.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/LENIN1.png') }}" class="image Lenin">
+            <img src="{{ url_for('static', filename='images/LENIN1.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/LENIN2.png') }}" class="image Lenin">
+            <img src="{{ url_for('static', filename='images/LENIN2.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/LENIN3.png') }}" class="image Lenin">
+            <img src="{{ url_for('static', filename='images/LENIN3.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/LENIN4.png') }}" class="image Lenin">
+            <img src="{{ url_for('static', filename='images/LENIN4.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/LENIN5.png') }}" class="image Lenin">
+            <img src="{{ url_for('static', filename='images/LENIN5.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ANDREY1.jpg') }}" class="image Andrey">
+            <img src="{{ url_for('static', filename='images/ANDREY1.jpg') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ANDREY3.jpg') }}" class="image Andrey">
+            <img src="{{ url_for('static', filename='images/ANDREY3.jpg') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ANDREY4.jpg') }}" class="image Andrey">
+            <img src="{{ url_for('static', filename='images/ANDREY4.jpg') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ANDREY7.jpg') }}" class="image Andrey">
+            <img src="{{ url_for('static', filename='images/ANDREY7.jpg') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ANDREY8.png') }}" class="image Andrey">
+            <img src="{{ url_for('static', filename='images/ANDREY8.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/BERNA1.jpg') }}" class="image Berna">
+            <img src="{{ url_for('static', filename='images/BERNA1.jpg') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/BERNA2.jpg') }}" class="image Berna">
+            <img src="{{ url_for('static', filename='images/BERNA2.jpg') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/BERNA3.jpg') }}" class="image Berna">
+            <img src="{{ url_for('static', filename='images/BERNA3.jpg') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/BERNA4.jpg') }}" class="image Berna">
+            <img src="{{ url_for('static', filename='images/BERNA4.jpg') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/BERNA5.jpg') }}" class="image Berna">
+            <img src="{{ url_for('static', filename='images/BERNA5.jpg') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ECHO1.png') }}" class="image Echo">
+            <img src="{{ url_for('static', filename='images/ECHO1.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ECHO2.png') }}" class="image Echo">
+            <img src="{{ url_for('static', filename='images/ECHO2.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ECHO3.png') }}" class="image Echo">
+            <img src="{{ url_for('static', filename='images/ECHO3.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ECHO4.png') }}" class="image Echo">
+            <img src="{{ url_for('static', filename='images/ECHO4.png') }}" alt="">
+        </a>
+        <a href="{{ url_for('static', filename='images/ECHO5.png') }}" class="image Echo">
+            <img src="{{ url_for('static', filename='images/ECHO5.png') }}" alt="">
+        </a>
+        
+        
+
+    </div>
+</div>
+<div class="homepage-button">
+    <a href="{{ url_for('home') }}" class="back-home-btn">GO BACK TO HOMEPAGE</a>
+</div>
+
+<!-- jQuery CDN link -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Magnific Popup JS CDN link -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<!-- External JS File -->
+<script src="{{ url_for('static', filename='touppercase.js') }}"></script>
+
+</body>
+</html>

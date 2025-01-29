@@ -1,0 +1,359 @@
+/* Importing Google Courier Prime for a modern Courier look */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure full height of the page */
+html, body {
+    height: 100%;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    margin-top: 80px; /* Space for the fixed header */
+    padding: 20px;
+    position: relative; /* To avoid overlap issues */
+    z-index: 1; /* Ensure content is below the header */
+}
+
+/* Glass Effect for the Container */
+.container {
+    position: fixed;
+    top: 52%; /* Moves the top edge to the middle of the viewport */
+    left: 50%; /* Centers it horizontally */
+    transform: translate(-50%, -50%); /* Adjusts so the center of the container aligns with the middle of the viewport */
+    max-width: 900px;
+    width: 100%; /* Makes it responsive */
+    max-height: 90vh; /* Prevents it from exceeding the viewport height */
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    overflow-y: auto; /* Enables scrolling within the container if content overflows */
+}
+
+/* Text Styling to complement the blue background */
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff; /* White color for better contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Slight shadow for readability */
+}
+
+.info, .note {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    color: #ffffff; /* White color for better contrast */
+}
+
+.info {
+    background: rgba(0, 123, 255, 0.2); /* Light blue with transparency */
+    border-left: 5px solid #007BFF;
+}
+
+.note {
+    background: rgba(255, 193, 7, 0.2); /* Light yellow with transparency */
+    border-left: 5px solid #ffc107;
+}
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    
+}
+
+ul li {
+    margin-bottom: 10px;
+    color: #ffffff; /* White color for better contrast */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+}
+
+/* Form Input Styling */
+input[type="text"] {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333; /* Dark text for readability */
+    background-color: rgba(255, 255, 255, 0.7); /* Slight transparency */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Postfix Expression Result Container */
+.result-container {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+}
+
+.result-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.result {
+    font-size: 1.2rem;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff; /* White background */
+}
+
+/* Error Message Styling */
+.error {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #d9534f;
+    font-size: 1.2rem;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Header Styling with Rounded Glass Effect */
+header {
+    width: 740px;
+    max-width: 70%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust the body to account for the fixed header */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/static/images/OTHERS.png') no-repeat center center/cover;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-top: 80px; /* Space for the fixed header */
+    transition: padding-top 0.3s ease; /* Smooth transition */
+}
+
+/* Header Links Styling */
+header a {
+    color: #eee;
+    margin-right: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Hover Effect for Links */
+header a:hover {
+    background-color: #f1683a;
+    color: #fff;
+}
+
+/* Active Link Style */
+header a.active {
+    border-bottom: 2px solid #f1683a;
+}
+
+/* Dropdown container styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Dropdown items styling */
+.dropdown-content a {
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.works-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.works-link {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    width: auto;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.works-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Styling for the homepage button */
+.homepage-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Button styling */
+.back-home-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.back-home-btn:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+/* To prevent content from overlapping, adjust content padding dynamically when expanded */
+body.expanded .content-wrapper {
+    padding-top: 120px; /* Adjust for expanded header */
+}
+
+body.expanded {
+    padding-top: 120px; /* Add space when header expands */
+}
+

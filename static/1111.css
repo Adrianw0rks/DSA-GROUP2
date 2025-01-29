@@ -1,0 +1,312 @@
+/* Body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Ensure vertical stacking of elements */
+  align-items: center;
+  min-height: 100vh;
+  background: url('/static/images/PROFILE.png') no-repeat center center/cover;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  overflow: hidden; /* Prevents scrollbars from appearing */
+  width: 100vw; /* Ensures the body takes the full width of the viewport */
+  height: 100vh; /* Ensures the body takes the full height of the viewport */
+}
+
+/* Main title styling */
+.main-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-top: 150px; /* Space below the fixed header */
+  margin-bottom: 20px; /* Space above the carousel */
+}
+
+/* Carousel wrapper */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+} 
+
+.carousel {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  background-image: url('your-image.jpg'); /* Replace 'your-image.jpg' with your image file */
+  background-size: cover; /* Ensures the image covers the entire gray area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-color: #2a2a40; /* Fallback gray color */
+  border-radius: 10px; /* Keeps rounded corners */
+  padding: 20px;
+  margin: 0 10px;
+  text-align: center;
+  width: 240px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.card button {
+  background: #ff6464;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #ff4747;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 36px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav.left {
+  left: -50px;
+}
+
+.nav.right {
+  right: -50px;
+}
+
+.nav:hover {
+  color: #ff6464;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.social-icons img {
+  width: 40px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  margin: 0 5px; /* Keeps spacing between icons */
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px; /* Adds space below the logos */
+}
+
+/* Header Styling with Rounded Glass Effect */
+header {
+  width: 740px;
+  max-width: 70%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Links Styling */
+header a {
+  color: #eee;
+  margin-right: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Hover Effect for Links */
+header a:hover {
+  background-color: #f1683a;
+  color: #fff;
+}
+
+/* Active Link Style */
+header a.active {
+  border-bottom: 2px solid #f1683a;
+}
+
+/* Dropdown container styling */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Dropdown items styling */
+.dropdown-content a {
+  color: #fff;
+  padding: 10px 0;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.works-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.works-link {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  width: auto;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.works-dropdown:hover .dropdown-content {
+  display: block;
+}
+#header {
+  transition: transform 0.3s ease-out;
+  transform: translateY(0);  /* Initially, it's at its normal position */
+}
+
+#header.hidden {
+  transform: translateY(-100%);  /* Move it off the screen */
+}
+
+/* Styling for the homepage button */
+.homepage-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Button styling */
+.back-home-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.back-home-btn:hover {
+  background-color: #555;
+  cursor: pointer;
+}

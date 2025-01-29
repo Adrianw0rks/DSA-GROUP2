@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='queue.css') }}">
+</head>
+<body>
+     <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            
+            <!-- Dropdown menu for Works -->
+            <div class="works-dropdown">
+                <a href="#" class="works-link" id="worksLink">Works</a>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="{{ url_for('linkedlist') }}">Linklist</a>
+                    <a href="{{ url_for('stack') }}">Stack</a>
+                    <a href="{{ url_for('queue_view') }}">Queue</a>
+                    <a href="{{ url_for('graph_view') }}">Graph</a>
+                    <a href="{{ url_for('tree_view') }}">Binary</a>
+                    <a href="{{ url_for('code') }}">Codes</a>
+                    <a href="{{ url_for('sort') }}">Sorting</a>
+                    <a href="{{ url_for('works') }}">Others</a>
+                </div>
+            </div>
+    
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+
+<div class="container">
+    <h2>Queue</h2>
+    
+    <p class="description">
+        A <strong>queue</strong> is a linear data structure that follows the <strong>FIFO</strong> (First In, First Out) principle.
+        Elements are added (enqueued) at the <strong>rear</strong> and removed (dequeued) from the <strong>front</strong>.
+    </p>
+
+    <!-- Add the image here -->
+    <div class="image-container" style="text-align: center; margin-bottom: 20px;">
+        <img src="{{ url_for('static', filename='images/queue_image.png') }}" alt="Queue Image" style="width: 80%; max-width: 600px;">
+    </div>
+
+    {% if error %}
+    <div class="notification-bubble">
+        {{ error }}
+    </div>
+    {% endif %}
+    <div class="action-buttons">
+    <!-- Enqueue Form -->
+    <form method="GET" action="/queue">
+        <div class="input-container">
+            <input type="text" name="value" placeholder="Enter value to enqueue" value="{{ request.args.get('value', '') }}">
+        </div>
+        <div class="enqueue-button-container">
+            <button type="submit" name="action" value="enqueue">Enqueue</button>
+        </div>
+    </form>
+
+    <!-- Dequeue Button -->
+    <form method="GET" action="/queue">
+        <button type="submit" name="action" value="dequeue">Dequeue</button>
+    </form>
+
+    <div id="output">
+        <h3>Queue Elements:</h3>
+        <p><strong>Rear</strong> -> Elements -> <strong>Front</strong></p>
+        <ul>
+            {% for element in queue_elements %}
+                <li>{{ element }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="homepage-button">
+    <a href="{{ url_for('home') }}" class="back-home-btn">GO BACK TO HOMEPAGE</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet the Creators</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='1111.css') }}">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+        <a href="{{ url_for('profile') }}">Profile</a>
+        
+        <!-- Dropdown menu for Works -->
+        <div class="works-dropdown">
+            <a href="#" class="works-link" id="worksLink">Works</a>
+            <div class="dropdown-content" id="dropdownContent">
+              <a href="{{ url_for('linkedlist') }}">Linklist</a>
+              <a href="{{ url_for('stack') }}">Stack</a>
+              <a href="{{ url_for('queue_view') }}">Queue</a>
+              <a href="{{ url_for('graph_view') }}">Graph</a>
+              <a href="{{ url_for('tree_view') }}">Binary</a>
+              <a href="{{ url_for('code') }}">Codes</a>
+              <a href="{{ url_for('sort') }}">Sorting</a>
+              <a href="{{ url_for('works') }}">Others</a>
+            </div>
+        </div>
+
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+</header>
+
+
+  <h1 class="main-title">Meet the Creators</h1>
+  <div class="carousel-wrapper">
+    <button class="nav left">&lt;</button>
+    <div class="carousel">
+      <div class="carousel-container">
+        <!-- Cards for creators -->
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/2f/d6/89/2fd6892a886dd69346630f8c1067b2de.jpg" alt="Profile">
+          <h3>Adrian Yadao</h3>
+          <p>"Uno sa DSA??"</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/adrian.yadao.33" target="_blank"><img src="https://i.pinimg.com/736x/41/7c/e5/417ce5e0dc7fb3a6db3877d338e40869.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/_sakai_rihito/" target="_blank"><img src="https://i.pinimg.com/736x/b6/f0/de/b6f0de20ea40c1216e9abbd482a3c283.jpg" alt="Instagram"></a>
+            <a href="mailto:example@email.com?subject=Inquiry&body=Hi%20there,%20I%20would%20like%20to%20know%20more%20about..." target="_blank"><img src="https://i.pinimg.com/736x/a1/69/d2/a169d24a78aa872c3298dcf6c5645d9c.jpg" alt="Gmail"></a>
+          </div>
+          <button class="info-btn" data-img="https://i.pinimg.com/736x/0a/38/63/0a3863e481c9626f89e3971ffdc97574.jpg">Information</button>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/45/16/35/451635445a0ef3a793fe842685365997.jpg" alt="Profile">
+          <h3>Andrey Abelida</h3>
+          <p>"To see is to bilibid"</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/abelidaandrey" target="_blank"><img src="https://i.pinimg.com/736x/41/7c/e5/417ce5e0dc7fb3a6db3877d338e40869.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/drey_rlph/" target="_blank"><img src="https://i.pinimg.com/736x/b6/f0/de/b6f0de20ea40c1216e9abbd482a3c283.jpg" alt="Instagram"></a>
+            <a href="mailto:andreyabelida01@gmail.com?subject=Inquiry&body=Hi%20there,%20I%20would%20like%20to%20know%20more%20about..." target="_blank"><img src="https://i.pinimg.com/736x/a1/69/d2/a169d24a78aa872c3298dcf6c5645d9c.jpg" alt="Gmail"></a>
+          </div>
+          <button class="info-btn" data-img="https://i.pinimg.com/736x/3b/b5/87/3bb5873501ab2f170f74d9773f7ac94e.jpg">Information</button>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/73/b9/90/73b9907d2a806b98510c0031d509c620.jpg" alt="Profile">
+          <h3>Nicole Adriano</h3>
+          <p>"Expert in loading… please wait."</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/nicole.adriano.35" target="_blank"><img src="https://i.pinimg.com/736x/41/7c/e5/417ce5e0dc7fb3a6db3877d338e40869.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/ad.__.i/" target="_blank"><img src="https://i.pinimg.com/736x/b6/f0/de/b6f0de20ea40c1216e9abbd482a3c283.jpg" alt="Instagram"></a>
+            <a href="mailto:nicoleadriano609@gmail.com?subject=Inquiry&body=Hi%20there,%20I%20would%20like%20to%20know%20more%20about..." target="_blank"><img src="https://i.pinimg.com/736x/a1/69/d2/a169d24a78aa872c3298dcf6c5645d9c.jpg" alt="Gmail"></a>
+          </div>
+          <button class="info-btn" data-img="https://i.pinimg.com/736x/ba/94/d6/ba94d6e9de62661c3a76974cf1b7b2c2.jpg">Information</button>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/ac/fc/38/acfc38f3ba8615e71b70d7ff5f83a1ed.jpg" alt="Profile">
+          <h3>Benny Clores</h3>
+          <p>“The only thing we have to fear is fear itself.”</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/jamesclores05" target="_blank"><img src="https://i.pinimg.com/736x/41/7c/e5/417ce5e0dc7fb3a6db3877d338e40869.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/james.clores.05/" target="_blank"><img src="https://i.pinimg.com/736x/b6/f0/de/b6f0de20ea40c1216e9abbd482a3c283.jpg" alt="Instagram"></a>
+            <a href="mailto:cloresbennyjames25@gmail.com?subject=Inquiry&body=Hi%20there,%20I%20would%20like%20to%20know%20more%20about..." target="_blank"><img src="https://i.pinimg.com/736x/a1/69/d2/a169d24a78aa872c3298dcf6c5645d9c.jpg" alt="Gmail"></a>
+          </div>
+          <button class="info-btn" data-img="https://i.pinimg.com/736x/18/dd/b5/18ddb5c48990a64fe10135776432e159.jpg">Information</button>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/18/67/f6/1867f66537dd5f5610a98d8c602bcc91.jpg" alt="Profile">
+          <h3>Enrico Ilagan</h3>
+          <p>"A life ain’t a life ‘til you live it"</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/akosiechoo" target="_blank"><img src="https://i.pinimg.com/736x/41/7c/e5/417ce5e0dc7fb3a6db3877d338e40869.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/echo.hndrxx/" target="_blank"><img src="https://i.pinimg.com/736x/b6/f0/de/b6f0de20ea40c1216e9abbd482a3c283.jpg" alt="Instagram"></a>
+            <a href="mailto:echooberos@gmail.com?subject=Inquiry&body=Hi%20there,%20I%20would%20like%20to%20know%20more%20about..." target="_blank"><img src="https://i.pinimg.com/736x/a1/69/d2/a169d24a78aa872c3298dcf6c5645d9c.jpg" alt="Gmail"></a>
+          </div>
+          <button class="info-btn" data-img="https://i.pinimg.com/736x/51/a4/e9/51a4e955ae33912be88154ea014cc5f5.jpg">Information</button>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/ee/2c/90/ee2c903c23536af0f47e20ace4d33c8c.jpg" alt="Profile">
+          <h3>Myk Magsipoc</h3>
+          <p>"Merry Christmas and Happy New Year!"</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/myk.angelo.462868" target="_blank"><img src="https://i.pinimg.com/736x/41/7c/e5/417ce5e0dc7fb3a6db3877d338e40869.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/myccore/" target="_blank"><img src="https://i.pinimg.com/736x/b6/f0/de/b6f0de20ea40c1216e9abbd482a3c283.jpg" alt="Instagram"></a>
+            <a href="mailto:mmykangelo@gmail.com?subject=Inquiry&body=Hi%20there,%20I%20would%20like%20to%20know%20more%20about..." target="_blank"><img src="https://i.pinimg.com/736x/a1/69/d2/a169d24a78aa872c3298dcf6c5645d9c.jpg" alt="Gmail"></a>
+          </div>
+          <button class="info-btn" data-img="https://i.pinimg.com/736x/b9/17/35/b917351ea9dfdab6327cee84cda8c3cd.jpg">Information</button>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/2a/42/e3/2a42e350b091bf64f81758cb9c2f970e.jpg" alt="Profile">
+          <h3>Lenin Palmon</h3>
+          <p>"subu motto"</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/fatima.lenin.1" target="_blank"><img src="https://i.pinimg.com/736x/41/7c/e5/417ce5e0dc7fb3a6db3877d338e40869.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/ilee.9_/" target="_blank"><img src="https://i.pinimg.com/736x/b6/f0/de/b6f0de20ea40c1216e9abbd482a3c283.jpg" alt="Instagram"></a>
+            <a href="mailto:palmonfatima18@gmail.com?subject=Inquiry&body=Hi%20there,%20I%20would%20like%20to%20know%20more%20about..." target="_blank"><img src="https://i.pinimg.com/736x/a1/69/d2/a169d24a78aa872c3298dcf6c5645d9c.jpg" alt="Gmail"></a>
+          </div>
+          <button class="info-btn" data-img="https://i.pinimg.com/736x/0a/97/a7/0a97a755febbae2be698aad55ffb0d59.jpg">Information</button>
+        </div>
+      </div>
+    </div>
+    <button class="nav right">&gt;</button>
+  </div>
+        <!-- Additional cards omitted for brevity -->
+      </div>
+    </div>
+    <button class="nav right">&gt;</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modal-close">X</button>
+    <img id="modal-image" src="" alt="Information">
+  </div>
+  <div class="homepage-button">
+    <a href="{{ url_for('home') }}" class="back-home-btn">GO BACK TO HOMEPAGE</a>
+</div>
+
+  <script src="{{ url_for('static', filename='profile.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Route Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='graph.css') }}">
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            
+            <!-- Dropdown menu for Works -->
+            <div class="works-dropdown">
+                <a href="#" class="works-link" id="worksLink">Works</a>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="{{ url_for('linkedlist') }}">Linklist</a>
+                    <a href="{{ url_for('stack') }}">Stack</a>
+                    <a href="{{ url_for('queue_view') }}">Queue</a>
+                    <a href="{{ url_for('graph_view') }}">Graph</a>
+                    <a href="{{ url_for('tree_view') }}">Binary</a>
+                    <a href="{{ url_for('code') }}">Codes</a>
+                    <a href="{{ url_for('sort') }}">Sorting</a>
+                    <a href="{{ url_for('works') }}">Others</a>
+                </div>
+            </div>
+    
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <h2>Train Route Finder</h2>
+
+        <form action="/graph" method="POST">
+            <!-- Starting Train Line Dropdown -->
+            <div>
+                <label for="start_line">Select Starting Train Line:</label>
+                <select id="start_line" name="start_line" onchange="updateStations('start_line', 'start_station')">
+                    <option value="" disabled selected>Select a Line</option>
+                    <option value="LRT 1">LRT 1</option>
+                    <option value="LRT 2">LRT 2</option>
+                    <option value="MRT">MRT</option>
+                </select>
+            </div>
+
+            <!-- Starting Station Dropdown -->
+            <div>
+                <label for="start_station">Select Starting Station:</label>
+                <select id="start_station" name="start_station">
+                    <option value="" disabled selected>Select a train line first</option>
+                </select>
+            </div>
+
+            <!-- Destination Train Line Dropdown -->
+            <div>
+                <label for="end_line">Select Destination Train Line:</label>
+                <select id="end_line" name="end_line" onchange="updateStations('end_line', 'end_station')">
+                    <option value="" disabled selected>Select a Line</option>
+                    <option value="LRT 1">LRT 1</option>
+                    <option value="LRT 2">LRT 2</option>
+                    <option value="MRT">MRT</option>
+                </select>
+            </div>
+
+            <!-- Destination Station Dropdown -->
+            <div>
+                <label for="end_station">Select Destination Station:</label>
+                <select id="end_station" name="end_station">
+                    <option value="" disabled selected>Select a train line first</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit">Find Route</button>
+            </div>
+        </form>
+
+        {% if result %}
+            <h3>Route Information:</h3>
+            <div class="result-box">
+                <p><strong>Start Station:</strong> {{ result.start }}</p>
+                <p><strong>End Station:</strong> {{ result.end }}</p>
+                <p><strong>Path:</strong> {{ result.path }}</p>
+            </div>
+        {% endif %}
+
+        <!-- View Map Button -->
+        <button type="button" onclick="viewMap()">View Map</button>
+
+        <!-- Map image container (hidden by default) -->
+        <div id="map-container" style="display: none; margin-top: 20px;">
+            <img src="{{ url_for('static', filename='images/train.jpg') }}" alt="Train Map" style="width: 100%; height: auto;">
+        </div>
+        <!-- Back to Homepage Button -->
+        <div class="homepage-button">
+            <a href="{{ url_for('home') }}" class="back-home-btn">GO BACK TO HOMEPAGE</a>
+        </div>
+
+    </div>
+    <script src="{{ url_for('static', filename='graph.js') }}"></script>
+</body>
+</html>

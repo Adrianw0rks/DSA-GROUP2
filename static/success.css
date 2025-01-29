@@ -1,0 +1,77 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('/static/images/message\ sent.png') no-repeat center center/cover; /* Path to background image */
+  background-size: cover;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Heading Styles */
+h1 {
+  font-size: 2.5rem;
+  color: #5cb85c;
+}
+
+/* Paragraph Styles */
+p {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+}
+
+/* Success Icon */
+.status-icon {
+  font-size: 4rem;
+  color: #5cb85c;
+  margin-bottom: 20px;
+}
+
+/* Message Summary Box */
+.message-summary {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 775px;
+  text-align: left;
+}
+
+.message-summary h3 {
+  margin-top: 0;
+  color: #5cb85c;
+}
+
+.message-summary p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Homepage Button */
+.homepage-button {
+  margin-top: 20px;
+}
+
+.back-home-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #0275d8;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.back-home-btn:hover {
+  background-color: #025aa5;
+}

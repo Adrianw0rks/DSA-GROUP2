@@ -1,0 +1,290 @@
+/* Adjust the body to account for the fixed header */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/static/images/queue.png') no-repeat center center/cover;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-top: 80px; /* Space for the fixed header */
+    transition: padding-top 0.3s ease; /* Smooth transition */
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for emphasis */
+    color: #ffffff; /* Adjust text color for readability */
+}
+
+
+/* Action Buttons container */
+.action-buttons {
+    display: flex; /* Use Flexbox to align buttons */
+    flex-direction: column; /* Stack the buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+button {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 500px; /* Maintain uniform button size */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Optional */
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter on hover */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Add hover shadow */
+}
+.input-container {
+    text-align: center; /* Center the input */
+    margin-bottom: 20px;
+}
+.container h2 {
+    color: #ffffff; /* White text for contrast */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Optional: Add subtle shadow for better visibility */
+    text-align: center; /* Centers the text horizontally */
+    font-size: 36px; /* Adjust size */
+}
+
+.container p {
+    color: #f8f9fa; /* Off-white for paragraph text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Optional */
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: 2    00px;
+}
+
+#output {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    color: #ffffff; /* White text */
+    overflow-y: auto;
+    max-height: 200px; /* Keep height manageable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some depth */
+    width: 500px;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+li {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 60px;
+    color: #495057;
+}
+
+li:nth-child(odd) {
+    background-color: #e9ecef;
+}
+
+/* Notification Bubble */
+.notification-bubble {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Centering the Enqueue and Dequeue buttons */
+.enqueue-button-container,
+.dequeue-button-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Add space between buttons */
+    margin-top: 20px;
+}
+
+/* Header Styling with Rounded Glass Effect */
+header {
+    width: 740px;
+    max-width: 70%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+/* Header Links Styling */
+header a {
+    color: #eee;
+    margin-right: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  /* Hover Effect for Links */
+  header a:hover {
+    background-color: #f1683a;
+    color: #fff;
+  }
+  
+  /* Active Link Style */
+  header a.active {
+    border-bottom: 2px solid #f1683a;
+  }
+  
+  /* Dropdown container styling */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Dropdown items styling */
+  .dropdown-content a {
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .works-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .works-link {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    width: auto;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .works-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Styling for the homepage button */
+.homepage-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Button styling */
+  .back-home-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hover effect */
+  .back-home-btn:hover {
+    background-color: #555;
+    cursor: pointer;
+  }

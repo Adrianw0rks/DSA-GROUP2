@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='success.css') }}">
+  <title>Message Sent Successfully</title>
+</head>
+<body>
+  <div class="content">
+    <div class="status-icon">✅</div>
+    <h1>Message Sent Successfully!</h1>
+    <p>Thank you, {{ name }}! Your message has been sent successfully. Here's a copy of your submission:</p>
+    
+    <!-- Message Summary Section -->
+    <div class="message-summary">
+      <h3>Message Details</h3>
+      <p><strong>Name:</strong> {{ name }}</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Message:</strong></p>
+      <p>{{ message }}</p>
+    </div>
+
+    <!-- Go Back to Homepage -->
+    <div class="homepage-button">
+      <a href="{{ url_for('home') }}" class="back-home-btn">GO BACK TO HOMEPAGE</a>
+    </div>
+  </div>
+</body>
+</html>

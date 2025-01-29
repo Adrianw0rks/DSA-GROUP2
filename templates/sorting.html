@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithms Visualizer</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="/static/sorting.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            
+            <!-- Dropdown menu for Works -->
+            <div class="works-dropdown">
+                <a href="#" class="works-link" id="worksLink">Works</a>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="{{ url_for('linkedlist') }}">Linklist</a>
+                    <a href="{{ url_for('stack') }}">Stack</a>
+                    <a href="{{ url_for('queue_view') }}">Queue</a>
+                    <a href="{{ url_for('graph_view') }}">Graph</a>
+                    <a href="{{ url_for('tree_view') }}">Binary</a>
+                    <a href="{{ url_for('code') }}">Codes</a>
+                    <a href="{{ url_for('sort') }}">Sorting</a>
+                    <a href="{{ url_for('works') }}">Others</a>
+                </div>
+            </div>
+    
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Sorting Algorithms Visualizer</h1>
+
+        <div class="description">
+            <section class="algorithm">
+                <h2>Bubble Sort</h2>
+                <ul>
+                    <li><strong>Time Complexity:</strong>
+                        <ul>
+                            <li>Best Case: O(n) - if the list is already sorted.</li>
+                            <li>Average/Worst Case: O(n<sup>2</sup>) - nested iterations.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Space Complexity:</strong> O(1) - it's an in-place algorithm, meaning it uses constant space.</li>
+                    <li><strong>Implication:</strong> Best used for small datasets or educational purposes due to its simplicity.</li>
+                </ul>
+            </section>
+        
+            <section class="algorithm">
+                <h2>Selection Sort</h2>
+                <ul>
+                    <li><strong>Time Complexity:</strong>
+                        <ul>
+                            <li>Best, Average, Worst Case: O(n<sup>2</sup>) - nested loops.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Space Complexity:</strong> O(1) - in-place algorithm.</li>
+                    <li><strong>Implication:</strong> Ideal for small lists or limited memory usage available.</li>
+                </ul>
+            </section>
+        
+            <section class="algorithm">
+                <h2>Insertion Sort</h2>
+                <ul>
+                    <li><strong>Time Complexity:</strong>
+                        <ul>
+                            <li>Best Case: O(n) - list is already sorted.</li>
+                            <li>Average/Worst Case: O(n<sup>2</sup>) - shifting elements for insertion.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Space Complexity:</strong> O(1) - in-place algorithm.</li>
+                    <li><strong>Implication:</strong> Best for nearly sorted or small datasets.</li>
+                </ul>
+            </section>
+        
+            <section class="algorithm">
+                <h2>Merge Sort</h2>
+                <ul>
+                    <li><strong>Time Complexity:</strong>
+                        <ul>
+                            <li>Best, Average, and Worst Case: O(n log n) - recursive splitting and merging.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Space Complexity:</strong> O(n) - extra space for merging.</li>
+                    <li><strong>Implication:</strong> Best for datasets that require stable sorting as it ensures consistent performance.</li>
+                </ul>
+            </section>
+        
+            <section class="algorithm">
+                <h2>Quick Sort</h2>
+                <ul>
+                    <li><strong>Time Complexity:</strong>
+                        <ul>
+                            <li>Best and Average Case: O(n log n) - good pivot selection.</li>
+                            <li>Worst Case: O(n<sup>2</sup>) - pivot divides the lists poorly.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Space Complexity:</strong> O(log n) - recursive stack.</li>
+                    <li><strong>Implication:</strong> Ideal for large datasets where average-case performance of O(n log n) is needed and space efficiency is important.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Add the image here -->
+    <div class="image-container" style="text-align: center; margin-bottom: 20px;">
+        <img src="{{ url_for('static', filename='images/sorting algo.jpg') }}" alt="Sort image" style="width: 80%; max-width: 600px;">
+    </div>
+
+        <!-- Input Section -->
+        <form id="sorting-form">
+            <label for="numbers">Enter numbers (comma-separated):</label>
+            <input 
+                type="text" 
+                id="numbers" 
+                name="numbers" 
+                placeholder="e.g., 5, 3, 8, 2"
+                aria-label="Enter numbers for sorting"
+            >
+            
+            <label for="algorithm">Choose a sorting algorithm:</label>
+            <select id="algorithm" name="algorithm" aria-label="Choose sorting algorithm">
+                <option value="bubble_sort">Bubble Sort</option>
+                <option value="selection_sort">Selection Sort</option>
+                <option value="insertion_sort">Insertion Sort</option>
+                <option value="quick_sort">Quick Sort</option>
+                <option value="merge_sort">Merge Sort</option>
+            </select>
+        </form>
+
+        <!-- Control Buttons -->
+        <button id="start-sort">Start Animation</button>
+
+        <!-- Sorting Visualization -->
+        <div id="bars-container" aria-label="Sorting visualization"></div>
+
+        <!-- Dynamic Status Display -->
+        <div id="status-display" aria-live="polite"></div>
+        <div id="error-message" style="color: red;"></div> <!-- Error message display -->
+    </div>
+    <div class="homepage-button">
+        <a href="{{ url_for('home') }}" class="back-home-btn">GO BACK TO HOMEPAGE</a>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="/static/sorting.js"></script>
+</body>
+</html>

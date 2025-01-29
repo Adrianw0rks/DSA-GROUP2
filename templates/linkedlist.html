@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linked List Operations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='linklist.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            
+            <!-- Dropdown menu for Works -->
+            <div class="works-dropdown">
+                <a href="#" class="works-link" id="worksLink">Works</a>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="{{ url_for('linkedlist') }}">Linklist</a>
+                    <a href="{{ url_for('stack') }}">Stack</a>
+                    <a href="{{ url_for('queue_view') }}">Queue</a>
+                    <a href="{{ url_for('graph_view') }}">Graph</a>
+                    <a href="{{ url_for('tree_view') }}">Binary</a>
+                    <a href="{{ url_for('code') }}">Codes</a>
+                    <a href="{{ url_for('sort') }}">Sorting</a>
+                    <a href="{{ url_for('works') }}">Others</a>
+                </div>
+            </div>
+    
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <h1>Linked List Operations</h1>
+        <div class="form-layout">
+            <!-- Current Linked List Display -->
+            <!-- Display Search Results or Error Messages -->
+            {% if search_result is not none and search_result >= 0 %}
+            <div class="result">
+                <p>Data "{{ request.form.get('data', '') }}" found at index {{ search_result }}.</p>
+            </div>
+            {% elif search_result is not none and search_result < 0 %}
+            <div class="error-message" aria-live="polite">
+                <p>Error: '{{ request.form.get('data', '') }}' was not found in the linked list.</p>
+            </div>
+            {% elif error_message %}
+            <div class="error-message" aria-live="polite">
+                <p>{{ error_message }}</p>
+            </div>
+            {% endif %}
+
+            <!-- Display Removed Data Message -->
+            {% if removed_data %}
+            <div class="result">
+                <p>Data "{{ removed_data }}" has been removed from the list.</p>
+            </div>
+            {% endif %}
+
+            <div class="linked-list">
+                <h3>Current Linked List:</h3>
+                <div class="list-content">
+                    <p>{{ linked_list }}</p>
+                </div>
+            </div>
+
+            <!-- Data Manipulation Forms -->
+            <div class="form-container">
+                <h3>Add Data</h3>
+                <form action="{{ url_for('linkedlist') }}" method="POST">
+                    <input type="text" name="data" placeholder="Enter data" required>
+                    <input type="submit" name="action" value="Add to List">
+                </form>
+            </div>
+
+            <div class="form-container insert-beginning">
+                <h3>Insert Data at Beginning</h3>
+                <form action="{{ url_for('linkedlist') }}" method="POST">
+                    <input type="text" name="data" placeholder="Enter data" required>
+                    <input type="submit" name="action" value="Insert at Beginning">
+                </form>
+            </div>
+
+            <div class="form-container insert-end">
+                <h3>Insert Data at End</h3>
+                <form action="{{ url_for('linkedlist') }}" method="POST">
+                    <input type="text" name="data" placeholder="Enter data" required>
+                    <input type="submit" name="action" value="Insert at End">
+                </form>
+            </div>
+
+            <!-- Insert Data at Specific Index -->
+            <div class="form-container insert-data-container">
+                <h3>Insert Data at Specific Index</h3>
+                <form action="{{ url_for('linkedlist') }}" method="POST">
+                    <input type="text" name="data" placeholder="Enter data" required>
+                    <input type="number" name="index" placeholder="Enter index (Index starts at 0)" required min="0">
+                    <input type="submit" name="action" value="Insert at Index">
+                </form>
+            </div>
+
+            <div class="operation-buttons">
+                <h3>Remove Data</h3>
+                <form action="{{ url_for('linkedlist') }}" method="POST">
+                    <input type="submit" name="action" value="Remove from Beginning">
+                    <input type="submit" name="action" value="Remove from End">
+                    <input type="text" name="data" placeholder="Enter data to remove">
+                    <input type="submit" name="action" value="Remove Specific Data">
+                </form>
+            </div>
+
+            <!-- Remove Data at Specific Index -->
+            <div class="form-container remove-data-container">
+                <h3>Remove Data at Specific Index</h3>
+                <form action="{{ url_for('linkedlist') }}" method="POST">
+                    <input type="number" name="index" placeholder="Enter index (Index starts at 0)" required min="0">
+                    <input type="submit" name="action" value="Remove at Index">
+                </form>
+            </div>
+
+            <!-- Search Data -->
+            <div class="form-container search-data-container">
+                <h3>Search for Data</h3>
+                <form action="{{ url_for('linkedlist') }}" method="POST">
+                    <input type="text" name="data" placeholder="Enter data to search" required>
+                    <input type="submit" name="action" value="Search Data">
+                </form>
+            </div>
+
+            <!-- Back to Homepage Button -->
+            <div class="homepage-button">
+                <a href="{{ url_for('home') }}" class="back-home-btn">GO BACK TO HOMEPAGE</a>
+            </div>
+        </div>
+
+        <!-- Linked List Explanation Section -->
+        <div class="linked-list-explanation">
+            <h4>What is a Linked List?</h4>
+            <p>
+                Linked lists offer several advantages, especially in scenarios that involve frequent data insertions and deletions. Since the nodes are not stored contiguously in the memory, inserting or deleting nodes can be done if the position is known, without the need of shifting the elements.
+                On the other hand, the major disadvantage is that accessing elements is slower than arrays because they it doesn't provide direct access to elements by index. In order to find an element, you need to traverse the list from the beginning.
+            </p>
+            <p>
+                Some applications include:
+                File systems use linked lists to represent the hierarchical structure of directories. Each directory or file is represented as a node in the list, allowing for efficient navigation and management of the file system.
+            </p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='linklist.js') }}"></script>
+</body>
+</html>

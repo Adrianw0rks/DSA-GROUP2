@@ -1,0 +1,255 @@
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+  transition: all .2s cubic-bezier(.34,1.12,.68,1.31);
+  
+}
+body {
+  background: url('/static/images/GALLERY.png') no-repeat center center/cover;
+  background-size: cover;
+}
+/* Main title styling */
+.main-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-top: 80px; /* Space below the fixed header */
+  margin-bottom: 0px;
+}
+
+
+/* Header Styling with Rounded Glass Effect */
+header {
+  width: 740px;
+  max-width: 70%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Links Styling */
+header a {
+  color: #eee;
+  margin-right: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Hover Effect for Links */
+header a:hover {
+  background-color: #f1683a;
+  color: #fff;
+}
+
+/* Active Link Style */
+header a.active {
+  border-bottom: 2px solid #f1683a;
+}
+
+/* Dropdown container styling */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Dropdown items styling */
+.dropdown-content a {
+  color: #fff;
+  padding: 10px 0;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.works-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.works-link {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  width: auto;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.works-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Gallery Adjustments */
+.gallery {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 90px; /* Adjust to match the header height */
+  margin-top: 50px; /* Space below the fixed header */
+}
+
+.gallery .controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  z-index: 10;
+}
+
+.gallery .controls .buttons {
+  height: 40px;
+  width: 140px;
+  background: white;
+  color: black;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  margin: 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  text-align: center;
+  border-radius: 20px; /* Half the height for an oval shape */
+}
+
+
+.gallery .controls .buttons.active {
+  background: coral;
+  color: #fff;
+}
+
+.gallery .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 600px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.gallery .image-container .image.hide {
+  display: none;
+}
+
+.gallery .image-container .image {
+  height: 250px;
+  width: 350px;
+  margin: 20px;
+  border: 5px solid transparent; /* Transparent border for gradient visibility */
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, #ff9a8b, #d1c4e9); /* Gradient: Peach to lavender */
+  animation: borderMove 3s linear infinite; /* Infinite animation */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+@keyframes borderMove {
+  0% {
+    border-image-source: linear-gradient(90deg, #ff9a8b, #d1c4e9); /* Start with peach to lavender */
+  }
+  50% {
+    border-image-source: linear-gradient(90deg, #d1c4e9, #ff9a8b); /* Swap to lavender to peach */
+  }
+  100% {
+    border-image-source: linear-gradient(90deg, #ff9a8b, #d1c4e9); /* Reset to peach to lavender */
+  }
+}
+
+
+.gallery .image-container .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery .image-container .image:hover img {
+  transform: scale(1.1);
+}
+.homepage-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative; /* Absolute positioning */
+  bottom: 50px; /* Adjust this value to place it closer or further from the bottom */
+}
+
+.back-home-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.back-home-btn:hover {
+  background-color: #555;
+  cursor: pointer;
+}

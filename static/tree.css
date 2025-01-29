@@ -1,0 +1,197 @@
+/* Existing styles */
+
+html, body {
+    height: 100%; /* Ensure the layout takes the full height */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: url('/static/images/binary\ tree.png') no-repeat center center/cover; /* Path to background image */
+    background-size: cover;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+h1 {
+    background-color: #4CAF50;
+    color: white;
+    margin: 70px 0px;
+    padding: 15px 0px;
+    margin-bottom: 10px;
+}
+
+#controls {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input {
+    font-size: 16px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+button {
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+#error-holder {
+    color: red;
+    text-align: center;
+    display: none; /* Initially hidden */
+}
+
+#description {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ccc; /* Border */
+    padding: 10px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#tree-canvas {
+    border: 5px solid #4CAF50; /* Canvas outline */
+    display: block;
+    margin: 0 auto; /* Center the canvas */
+}
+/* Header Styling with Rounded Glass Effect */
+header {
+  width: 740px;
+  max-width: 70%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Header Links Styling */
+header a {
+    color: #eee;
+    margin-right: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  /* Hover Effect for Links */
+  header a:hover {
+    background-color: #f1683a;
+    color: #fff;
+  }
+  
+  /* Active Link Style */
+  header a.active {
+    border-bottom: 2px solid #f1683a;
+  }
+  
+  /* Dropdown container styling */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Dropdown items styling */
+  .dropdown-content a {
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .works-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .works-link {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    width: auto;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .works-dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .homepage-button {
+    display: flex;
+    justify-content: center;
+    margin-top: auto; /* Push the button to the bottom */
+    padding-bottom: 20px; /* Spacing from bottom */
+  }
+  
+  .back-home-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hover effect */
+  .back-home-btn:hover {
+    background-color: #555;
+    cursor: pointer;
+  }

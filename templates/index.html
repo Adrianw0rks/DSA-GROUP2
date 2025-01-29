@@ -1,0 +1,111 @@
+<!-- HTML Code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <title>MeowGicians | Magical Web Development</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            
+            <!-- Dropdown menu for Works -->
+            <div class="works-dropdown">
+                <a href="#" class="works-link" id="worksLink">Works</a>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="{{ url_for('linkedlist') }}">Linklist</a>
+                    <a href="{{ url_for('stack') }}">Stack</a>
+                    <a href="{{ url_for('queue_view') }}">Queue</a>
+                    <a href="{{ url_for('graph_view') }}">Graph</a>
+                    <a href="{{ url_for('tree_view') }}">Binary</a>
+                    <a href="{{ url_for('code') }}">Codes</a>
+                    <a href="{{ url_for('sort') }}">Sorting</a>
+                    <a href="{{ url_for('works') }}">Others</a>
+                </div>
+            </div>
+    
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Popup photos container -->
+    <div class="popup-container">
+        <div class="popup-photo" id="photo1">
+            <img src="https://i.pinimg.com/736x/45/16/35/451635445a0ef3a793fe842685365997.jpg" alt="Team Photo 1">
+        </div>
+        <div class="popup-photo" id="photo2">
+            <img src="https://i.pinimg.com/736x/72/b9/88/72b98823cbefe28483a9c27364dba0d5.jpg" alt="Team Photo 2">
+        </div>
+        <div class="popup-photo" id="photo3">
+            <img src="https://i.pinimg.com/736x/2a/42/e3/2a42e350b091bf64f81758cb9c2f970e.jpg" alt="Team Photo 3">
+        </div>
+        <div class="popup-photo" id="photo4">
+            <img src="https://i.pinimg.com/736x/18/67/f6/1867f66537dd5f5610a98d8c602bcc91.jpg" alt="Team Photo 4">
+        </div>
+        <div class="popup-photo" id="photo5">
+            <img src="https://i.pinimg.com/736x/ee/2c/90/ee2c903c23536af0f47e20ace4d33c8c.jpg" alt="Team Photo 5">
+        </div>
+        <div class="popup-photo" id="photo6">
+            <img src="https://i.pinimg.com/736x/2a/42/e3/2a42e350b091bf64f81758cb9c2f970e.jpg" alt="Team Photo 6">
+        </div>
+        <div class="popup-photo" id="photo7">
+            <img src="https://i.pinimg.com/736x/2f/d6/89/2fd6892a886dd69346630f8c1067b2de.jpg" alt="Team Photo 7">
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="section__container">
+            <div class="content">
+                <p class="subtitle">HELLO</p>
+                <h1 class="title">
+                    We <span>are<br /></span> MeowGicians
+                </h1>
+                <p class="description">
+                    We are a group of BSCpE students from Section 2-3, passionate about learning web development. As "newbie magicians," we aim to bring a touch of creativity, teamwork, and a sprinkle of magic to every project. Our name, MeowGicians, reflects our playful, creative nature, blending curiosity (like cats) with the magic of transforming ideas into reality.
+                </p>
+                <div class="action__btns">
+                    <a href="mailto:group2.contactus@gmail.com">
+                        <button class="portfolio">Contact Us</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const photos = document.querySelectorAll('.popup-photo');
+            let currentIndex = 0;
+            const popupInterval = 3000; // 3 seconds per photo
+            
+            function showNextPhoto() {
+                // Hide all photos
+                photos.forEach(photo => {
+                    photo.classList.remove('active');
+                });
+                
+                // Show current photo
+                photos[currentIndex].classList.add('active');
+                
+                // Update index for next photo
+                currentIndex = (currentIndex + 1) % photos.length;
+            }
+            
+            // Start the photo sequence
+            setInterval(showNextPhoto, popupInterval);
+            
+            // Show first photo immediately
+            showNextPhoto(); 
+        });
+    </script>
+</body>
+</html>
